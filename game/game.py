@@ -1,5 +1,3 @@
-
-
 from  random import randint
 
 class Game :
@@ -12,26 +10,32 @@ class Game :
             count=5
             scores=[0,2,4,6,8,10]
             while count > 0 :
-                guessed_number=int(input(f'Dear {self.player} enter your guess'))
-                if guessed_number == self.number:
-                    self.score=scores[count]
-                    print(f'congrats ! , You win the number is {self.number} and your score is : {scores[count]} ')
-                 
-                    count = 0
-                if guessed_number > self.number:
-                    count-=1
-                    if count == 0:
-                        print ('you lose ')
-                        Game.result[self.player]=scores[count]
-                    else:
-                        print(f'your guess too high ,{count} rounds left')
-                if guessed_number < self.number:
-                    count-=1
-                    if count == 0:
-                        print ('you lose ')
-                        Game.result[self.player]=scores[count]
-                    else:
-                        print(f'your guess too low ,{count} rounds left')
+                
+
+                try:
+                    guessed_number=int(input(f'Dear {self.player} enter your guess between (1-20)  '))
+                    if guessed_number == self.number:
+                        self.score=scores[count]
+                        print(f'congrats ! , You win the number is {self.number} and your score is : {scores[count]} ')
+                    
+                        count = 0
+                    if guessed_number > self.number:
+                        count-=1
+                        if count == 0:
+                            print ('you lose ')
+                            Game.result[self.player]=scores[count]
+                        else:
+                            print(f'your guess too high ,{count} rounds left')
+                    if guessed_number < self.number:
+                        count-=1
+                        if count == 0:
+                            print ('you lose ')
+                            Game.result[self.player]=scores[count]
+                        else:
+                            print(f'your guess too low ,{count} rounds left')
+                except ValueError:
+                         print('The provided value is not an integer')
+                         continue
 
          
 
@@ -57,25 +61,6 @@ class Game :
 
 
 
-x=True
-
-while x :
-
-
-    
-    print('''#####  Hi! welcome to Guessing Game   ##### ''')
-
-    player_1=input("Player 1 : Please Enter Your Name ==> ")
-    player=Game(player_1)
-    player.guess_number()
-    player.display_score()
-
-    ask=input('do you want to play again? y/n ')
-    if ask == 'n':
-       x=False
-
-       print("Bye , we hope you come soon ")
-       player.display_score()
 
 
 
