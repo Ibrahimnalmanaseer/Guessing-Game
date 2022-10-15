@@ -1,11 +1,4 @@
 
- Name : ehab | Score : 0
- Name : ehab  | Score : 0
  Name : ttttt | Score : 0
- Name : tttttt | Score : 0
- Name : tttt | Score : 0
- Name : iiii | Score : 0
- Name : rrrrr | Score : 0
- Name : ttttt | Score : 0
- Name : tttt | Score : 0
- Name : rrrr | Score : 0
+ Name : ibarhim | Score : 10
+ Name : ttttttt | Score : 0
