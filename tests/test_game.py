@@ -1,4 +1,4 @@
-from threading import active_count
+
 import pytest
 
 from guessing_game.game import GuessingGame
@@ -29,15 +29,40 @@ def test_game_score():
 def test_guessed_num():
 
     player=GuessingGame('ehab')
+    player.guessed_number=10
     actual=player.guessed_number
-    excepted=''
+    excepted=10
     assert excepted == actual
 
-def test_input():
-    player =GuessingGame('hani')
+def test_input_1():
+    player =GuessingGame('salem')
     player.guessed_number=10
     player.number=10
     actual=player.guess_number()
-    excepted =  print(f'congrats ! , You win the number is {player.number} and your score is : 10 ')  
+    
+    excepted =print('congrats ! , You win the number is 10 and your score is : 10 ')
 
     assert excepted == actual
+
+def test_input_2():
+    player =GuessingGame('hani')
+    player.guessed_number=10
+    player.number=11
+    actual=player.guess_number()
+    excepted =  print(f'your guess too low , 4 rounds left')  
+
+    assert excepted == actual
+
+
+def test_score():
+    player =GuessingGame('ibarhim')
+    player.guessed_number=10
+    player.number=10
+    player.guess_number()
+    actual=player.display_score()
+    print(actual)
+    excepted =  print(f' Name : {player.player} | Score : 10')  
+
+    assert excepted == actual
+
+
