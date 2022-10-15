@@ -1,11 +1,12 @@
 from  random import randint
 
-class Game :
+class GuessingGame :
     result={}
     def __init__(self,player):
         self.player=player
         self.number=randint(1,20)
         self.score = 0
+        self.guessed_number=''
     def guess_number(self):
             count=5
             scores=[0,2,4,6,8,10]
@@ -13,24 +14,24 @@ class Game :
                 
 
                 try:
-                    guessed_number=int(input(f'Dear {self.player} enter your guess between (1-20)  '))
-                    if guessed_number == self.number:
+                    self.guessed_number=int(input(f'Dear {self.player} enter your guess between (1-20)  '))
+                    if self.guessed_number == self.number:
                         self.score=scores[count]
                         print(f'congrats ! , You win the number is {self.number} and your score is : {scores[count]} ')
                     
                         count = 0
-                    if guessed_number > self.number:
+                    if self.guessed_number > self.number:
                         count-=1
                         if count == 0:
                             print ('you lose ')
-                            Game.result[self.player]=scores[count]
+                            
                         else:
                             print(f'your guess too high ,{count} rounds left')
-                    if guessed_number < self.number:
+                    if self.guessed_number < self.number:
                         count-=1
                         if count == 0:
                             print ('you lose ')
-                            Game.result[self.player]=scores[count]
+                            
                         else:
                             print(f'your guess too low ,{count} rounds left')
                 except ValueError:
@@ -58,7 +59,10 @@ class Game :
 
 
 
-
+player =GuessingGame('ehab')
+print('game')
+player.guessed_number=10
+print(player.guess_number)
 
 
 
