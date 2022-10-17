@@ -13,6 +13,7 @@
     - [Pull Request 3](https://github.com/Ibrahimnalmanaseer/Guessing-Game/pull/3)
     - [Pull Request 4](https://github.com/Ibrahimnalmanaseer/Guessing-Game/pull/4)
     - [Pull Request 5](https://github.com/Ibrahimnalmanaseer/Guessing-Game/pull/5)
+    - [Pull Request 5](https://github.com/Ibrahimnalmanaseer/Guessing-Game/pull/6)
     
 
 ### Setup
