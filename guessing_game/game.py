@@ -2,6 +2,14 @@ from mimetypes import guess_all_extensions
 from  random import randint
 
 class GuessingGame :
+
+    '''
+    a fun game let user to interact with computer, guessing the number that the game has generated from 1 - 20 
+    in five rounds 
+    
+    
+    '''
+
     result={}
     def __init__(self,player):
         self.player=player
@@ -10,6 +18,11 @@ class GuessingGame :
         self.guessed_number=''
         
     def guess_number(self):
+
+            '''
+            Check the player input and return the result , with calculating the remaining rounds  
+            
+            '''
             count=5
             scores=[0,2,4,6,8,10]
             while count > 0 :
@@ -47,7 +60,11 @@ class GuessingGame :
 
 
     def display_score(self):
-
+        '''
+        
+         display all the players score as list at the end of the game and appended on score file
+        
+        '''
         with open ('./score.txt','a') as file:
             file.write(f'\n Name : {self.player} | Score : {self.score}')
 
@@ -59,6 +76,10 @@ class GuessingGame :
 class RunGame:
 
     def run():
+
+        '''
+        Run the game class with welcome message and give the player a choice to play again or quit the game  
+        '''
 
         if __name__=='__main__':
                 x=True
